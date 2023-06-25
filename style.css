@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+:root {
+  --transition: 0.5s ease;
+  --black-cl: #111;
+  --gray-cl: #777;
+  --white-cl: #fff;
+  --hero-bg-cl: #336eff;
+  --light-blue-cl: #33c8ff;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin: 30px;
+}
+
+.card {
+  width: 350px;
+  background-color: var(--white-cl);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card-img {
+  width: 350px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.card-content {
+  position: relative;
+  text-align: center;
+  margin: 15px;
+}
+
+.text {
+  position: relative;
+  font-size: 14px;
+  text-align: left;
+  height: 100px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  transition: var(--transition);
+}
+
+.text::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, var(--white-cl), transparent);
+  display: none;
+}
+
+.card.gradient .text::before {
+  display: block;
+}
+
+.see-more-btn {
+  font-size: 14px;
+  color: var(--gray-cl);
+  user-select: none;
+  cursor: pointer;
+  transition: color var(--transition), transform var(--transition);
+  background-color: transparent;
+  border: none;
+}
+
+.see-more-btn:hover,
+.see-more-btn:focus {
+  color: var(--black-cl);
+  transform: scale(1.2);
+}
+
+/* Media queries */
+
+@media screen and (max-width: 450px) {
+  .card-container {
+    margin: 15px;
+  }
+  .card {
+    width: 100%;
+  }
+  .card-img {
+    width: 100%;
+  }
+}
